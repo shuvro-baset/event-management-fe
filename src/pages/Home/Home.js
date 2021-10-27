@@ -1,37 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Banner from '../../components/Banner/Banner';
 import './Home.css'
 const Home = () => {
+    const [activities, setActivities] = useState([])
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/home')
+            .then(res => res.json())
+            .then(data => setActivities(data))
+    })
     return (
         <>
          <Banner></Banner>
          <Container>
              <Row className="activities-div">
-                <Col md={3}>
-                    <div className="p-2 my-3">
-                        <img className="img-fluid" src="https://i.ibb.co/L6X60hy/animal-Shelter.png" alt="" />
-                        <button className="btn w-100">activities</button>
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="p-2 my-3">
-                        <img className="img-fluid" src="https://i.ibb.co/L6X60hy/animal-Shelter.png" alt="" />
-                        <button className="btn w-100">activities</button>
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="p-2 my-3">
-                        <img className="img-fluid" src="https://i.ibb.co/L6X60hy/animal-Shelter.png" alt="" />
-                        <button className="btn w-100">activities</button>
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="p-2 my-3">
-                        <img className="img-fluid" src="https://i.ibb.co/L6X60hy/animal-Shelter.png" alt="" />
-                        <button className="btn w-100">activities</button>
-                    </div>
-                </Col>
+                {
+
+                    activities.map(activity =>
+                        <Col md={3} key={activity._id}>
+                            <div className="p-2 my-3">
+                                <img className="img-fluid" src={activity.img} alt="" />
+                                <button className="btn w-100">{activity.title}</button>
+                            </div>
+                        </Col> 
+                )
+                
+                }
              </Row>
          </Container>   
         </>
