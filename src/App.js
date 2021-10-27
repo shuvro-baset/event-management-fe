@@ -5,9 +5,12 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register';
 import MyEvents from './pages/MyEvents/MyEvents';
 import Home from './pages/Home/Home';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <>
+      <AuthProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -22,11 +25,12 @@ function App() {
           <Route path="/register">
             <Register></Register>
           </Route>
-          <Route path="/my-events">
+          <PrivateRoute path="/my-events">
             <MyEvents></MyEvents>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
+      </AuthProvider>
     </>
   );
 }
