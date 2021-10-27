@@ -1,17 +1,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Banner from './components/Banner/Banner';
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register';
 import MyEvents from './pages/MyEvents/MyEvents';
+import Home from './pages/Home/Home';
 function App() {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path="/">
-            <Banner></Banner>
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
           </Route>
           <Route path="/login">
             <Login></Login>
