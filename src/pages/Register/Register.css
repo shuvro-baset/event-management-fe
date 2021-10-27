@@ -1,0 +1,17 @@
+.register-input{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+}
+.register-input input{
+    outline: none;
+    margin: 7px 5px;
+    padding: 3px 5px;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+}
+::placeholder{
+    color: #000;
+    font-weight: 400;
+}

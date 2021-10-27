@@ -1,0 +1,11 @@
+.login-page{
+    background-color: #E5E5E5;
+    height: 100vh;
+}
+.login-form{
+    border: 1px solid gray;
+    height: 350px;
+    padding: 10px 40px;
+    background-color: white;
+    border-radius: 10px;
+}
