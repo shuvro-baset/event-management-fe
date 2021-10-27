@@ -7,17 +7,13 @@
 }
 .menu-item{
     text-decoration: none;
-    color: #7868E6;
+    color: #000000;
     padding: 6px 10px;
     margin: 10px;
-    background-color: #fff;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
 }
-.navBar{
-    box-shadow: 5px 5px 15px #B8B5FF;
 
-}
-.navBg{
-    background-color: #E4FBFF;
+.logo{
+    height: 60px;
 }

@@ -1,0 +1,23 @@
+.banner{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./../../images/banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.input-box input{
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgba(156, 150, 150, 0.596);
+    border-radius: 5px;
+    width: 300px;
+}
+.btn-search{
+    background-color: #3F90FC;
+    color: #fff;
+    padding: 6px 8px;
+    outline: none;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
