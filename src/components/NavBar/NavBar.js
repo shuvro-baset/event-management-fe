@@ -12,14 +12,12 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
                     <NavLink className="menu-item" to="/home">Home</NavLink>
-                    <NavLink className="menu-item" to="/services">Donation</NavLink>
-                    <NavLink className="menu-item" to="/doctors">Events</NavLink>
+                    <NavLink className="menu-item" to="/my-events">My Events</NavLink>
+                    <NavLink className="menu-item" to="/doctors">Add Events</NavLink>
                     <NavLink className="menu-item" to="/news">Blogs</NavLink>
-                    <NavLink className="menu-item" to="/about">Register</NavLink>
+                    <NavLink className="menu-item" to="/register">Register</NavLink>
                     <NavLink className="menu-item" to="/about">Admin</NavLink>
                 </Nav>
-
-               
                 </Navbar.Collapse>
             </Container>
         </Navbar>
