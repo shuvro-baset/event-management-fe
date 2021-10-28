@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation,useHistory } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
 import logo from './../../images/logos/logo.png'
 import './Register.css'
@@ -13,6 +13,12 @@ const Register = () => {
     const dateRef = useRef();
     const descriptionRef = useRef();
     const activityTitleRef = useRef();
+    console.log(activity)
+    // use location state 
+    const location = useLocation();
+    const history = useHistory();
+    // set redirect url
+    const redirect_uri = '/my-events';
 
     useEffect(()=> {
         const uri = `http://localhost:5000/add-activities/${Id}`;
@@ -30,8 +36,9 @@ const Register = () => {
         const date = dateRef.current.value;
         const description = descriptionRef.current.value;
         const activity = activityTitleRef.current.value;
+        const activityImage = activity.img;
 
-        const newActivity = {fullName: fullName, email: email, date: date, description: description, activity, activityImage: activity.img}
+        const newActivity = {fullName: fullName, email: email, date: date, description: description, activityImage: activityImage, activity }
     fetch(`http://localhost:5000/add-activities/${Id}`, {
         method: 'POST',
         headers: {
@@ -44,6 +51,7 @@ const Register = () => {
             if (data.insertedId) {
                 alert('Successfully added the user.')
                 e.target.reset();
+                history.push(redirect_uri)
             }
         })
     e.preventDefault();
