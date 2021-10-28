@@ -1,9 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
 import logo from './../../images/logos/logo.png'
 import './Register.css'
 const Register = () => {
+    const {user} = useAuth()
     return (
         <Container fluid className="login-page">
             <Row>
