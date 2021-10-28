@@ -21,7 +21,7 @@ const Register = () => {
     const redirect_uri = '/my-events';
 
     useEffect(()=> {
-        const uri = `http://localhost:5000/add-activities/${Id}`;
+        const uri = `https://shielded-depths-97846.herokuapp.com/add-activities/${Id}`;
         console.log(uri)
         fetch(uri)
         .then(res => res.json())
@@ -39,7 +39,7 @@ const Register = () => {
         const activityImage = activity.img;
 
         const newActivity = {fullName: fullName, email: email, date: date, description: description, activityImage: activityImage, activity }
-    fetch(`http://localhost:5000/add-activities/${Id}`, {
+    fetch(`https://shielded-depths-97846.herokuapp.com/add-activities/${Id}`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

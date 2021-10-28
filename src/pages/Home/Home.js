@@ -8,7 +8,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/home')
+        fetch('https://shielded-depths-97846.herokuapp.com/home')
             .then(res => res.json())
             .then(data => setActivities(data))
     })
