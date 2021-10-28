@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import './Home.css'
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
                         <Col md={3} key={activity._id}>
                             <div className="p-2 my-3">
                                 <img className="img-fluid" src={activity.img} alt="" />
-                                <button className="btn w-100">{activity.title}</button>
+                                <Link to={`/add-activities/${activity._id}`}><button className="btn w-100">{activity.title}</button></Link>
                             </div>
                         </Col> 
                 )

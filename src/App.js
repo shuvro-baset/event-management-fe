@@ -22,9 +22,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/register">
+          <PrivateRoute path="/add-activities/:Id">
             <Register></Register>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/my-events">
             <MyEvents></MyEvents>
           </PrivateRoute>
